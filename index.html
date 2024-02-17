@@ -76,16 +76,25 @@
     <div class="form_description">
       <h2 style="text-align: center;">Escolha a sua raça.</h2>
     </div>
-    <h3 style="text-align: center;">
-      <label class="description" for="email">Email:<br></label>
-      <input id="email" class="element text medium" maxlength="30" name="email" required="" type="text">
-      <label class="description" for="breed"></label>
-    </h3>
-    <h3 style="text-align: center;">
-      <label class="description" for="breed">Raça:<br></label>
-      <select id="breed" class="element text medium" name="breed" required=""></select>
-      <img id="breedImage" src="assets/silex" alt="Breed Image" style="max-width: 100px; max-height: 100px;">
-    </h3>
+    <table style="margin:auto;">
+      <tbody><tr>
+        <td style="text-align: right;">
+          <label class="description" for="email">Email:</label>
+        </td>
+        <td>
+          <input id="email" class="element text medium" maxlength="30" name="email" required="" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: right;">
+          <label class="description" for="breed">Raça:</label>
+        </td>
+        <td>
+          <select id="breed" class="element text medium" name="breed" required=""></select>
+          <img id="breedImage" src="assets/silex" alt="Breed Image" style="width: 50px; height: 50px;">
+        </td>
+      </tr>
+    </tbody></table>
     <p style="text-align: center;">
       <button class="g-recaptcha" type="submit" data-sitekey="6LfxZxsdAAAAAIpzA2N_FcjmbhpaHi5r3kjaVu7M" data-callback="onSubmit">Enviar</button>
     </p>
@@ -94,14 +103,12 @@
 </div>
 
 <script>
-  // Fetch data from the API
   fetch('https://api.thecatapi.com/v1/breeds')
     .then(response => response.json())
     .then(data => {
       const breedSelect = document.getElementById('breed');
       const breedImage = document.getElementById('breedImage');
 
-      // Populate the breed options
       data.forEach(breed => {
         const option = document.createElement('option');
         option.value = breed.id;
@@ -109,25 +116,19 @@
         breedSelect.appendChild(option);
       });
 
-      // Event listener for breed selection change
       breedSelect.addEventListener('change', () => {
         const selectedBreedId = breedSelect.value;
+        const selectedBreed = data.find(breed => breed.id == selectedBreedId);
 
-        // Fetch image for the selected breed
-        fetch(`https://api.thecatapi.com/v1/images/search?breed_id=${selectedBreedId}`)
-          .then(response => response.json())
-          .then(images => {
-            if (images.length > 0) {
-              const imageUrl = images[0].url;
-              breedImage.src = imageUrl;
-            }
-          })
-          .catch(error => console.error('Error fetching breed image:', error));
+        if (selectedBreed && selectedBreed.image) {
+          breedImage.src = selectedBreed.image.url;
+        } else {
+          breedImage.src = ''; // Clear the image if no breed or image is selected
+        }
       });
     })
     .catch(error => console.error('Error fetching breeds:', error));
 
-  // Your onSubmit function here
   function onSubmit() {
     // Add your form submission logic
     console.log('Form submitted!');
