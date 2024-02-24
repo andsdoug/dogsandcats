@@ -14,7 +14,7 @@
     
     <script class="silex-script"></script>
     
-    <title>Alerta de Ações(B3) via E-mail - principal</title>
+    <title>Alerta de Ações(B3) via E-mail - em-manutencao</title>
     
 
     
@@ -38,7 +38,7 @@
   gtag('config', 'G-3CD6KS1MHN');
 </script><style>body { opacity: 0; transition: .25s opacity ease; }</style></head>
 
-<body class="body-initial all-style enable-mobile prevent-resizable prevent-selectable editable-style silex-runtime silex-published" data-current-page="page-principal">
+<body class="body-initial all-style enable-mobile prevent-resizable prevent-selectable editable-style silex-runtime silex-published" data-current-page="page-em-manutencao">
     
 
 
@@ -69,107 +69,16 @@
 
 
 <section class="container-element editable-style silex-id-1478366444112-1 section-element prevent-resizable">
-        <div class="editable-style silex-element-content silex-id-1478366444112-0 container-element website-width"><div class="editable-style image-element silex-id-1641064003600-0 page-page-1 page-principal paged-element paged-element-visible"><img src="assets/boti_alerta_acoes.jpg"></div></div>
+        <div class="editable-style silex-element-content silex-id-1478366444112-0 container-element website-width"><div class="editable-style image-element silex-id-1708776030987-0 page-em-manutencao paged-element paged-element-visible"><img src="assets/chaveiroQr.png"></div></div>
     </section><section class="container-element editable-style silex-id-1474394621033-3 section-element prevent-resizable">
-        <div class="editable-style silex-element-content silex-id-1474394621032-2 container-element website-width selected"><div class="editable-style html-element silex-id-1641063452516-2 page-page-1 page-principal paged-element paged-element-visible"><div class="silex-element-content">
-
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário com Pix</title>
-
-
-
-<div id="form_container">
-  <form id="boti-form" class="appnitro" action="https://api.boti.com.br/api/v1/dogsandcats" method="post">
-    <div class="form_description">
-      <h2 style="text-align: center;">Escolha a sua raça.</h2>
-    </div>
-    <h3 style="text-align: center;">
-      <label class="description" for="email">Email:<br></label>
-      <input id="email" class="element text medium" maxlength="30" name="email" required="" type="text">
-      <label class="description" for="breed"></label>
-    </h3>
-    <h3 style="text-align: center;">
-      <label class="description" for="breed">Raça:<br></label>
-      <select id="breed" class="element text medium" name="breed" required=""></select>
-    </h3>
-    <div id="image-container" style="text-align: center;">
-      <img id="breed-image" alt="Imagem da Raça Escolhida" style="max-width: 300px; max-height: 200px;">
-    </div>
-    <p style="text-align: center;">
-      <button class="g-recaptcha" type="submit" data-sitekey="6LfxZxsdAAAAAIpzA2N_FcjmbhpaHi5r3kjaVu7M" data-callback="onSubmit">Enviar</button>
-    </p>
-    <p style="text-align: center;">&nbsp;</p>
-
-    <!-- Pix Information -->
-    <div style="text-align: center;">
-      <p><strong>Copie e cole o valor do Pix Payload:</strong></p>
-      <textarea id="pix-payload" rows="4" cols="50" readonly=""></textarea>
-    </div>
-  </form>
-</div>
-
-<script>
-  // Fetch data from the API
-  fetch('https://api.thecatapi.com/v1/breeds')
-    .then(response => response.json())
-    .then(data => {
-      const breedSelect = document.getElementById('breed');
-
-      data.forEach(breed => {
-        const option = document.createElement('option');
-        option.value = breed.id;
-        option.text = breed.name;
-        breedSelect.appendChild(option);
-      });
-
-      // Add event listener to update image when breed is selected
-      breedSelect.addEventListener('change', updateBreedImage);
-    })
-    .catch(error => console.error('Error fetching breeds:', error));
-
-  function updateBreedImage() {
-    const breedSelect = document.getElementById('breed');
-    const selectedBreedId = breedSelect.value;
-    const breedImage = document.getElementById('breed-image');
-
-    // Fetch an image of the selected breed
-    fetch(`https://api.thecatapi.com/v1/images/search?breed_id=${selectedBreedId}`)
-      .then(response => response.json())
-      .then(data => {
-        const imageUrl = data[0].url;
-        breedImage.src = imageUrl;
-      })
-      .catch(error => console.error('Error fetching breed image:', error));
-  }
-
-  // Função onSubmit aqui...
-
-  // Carregar Pix Payload automaticamente
-  document.getElementById('pix-payload').innerText = '00020126550014BR.GOV.BCB.PIX0115pix@boti.com.br0214mensagem teste520400005303986540510.005802BR5925Anderson Douglas da Silva6009SAO PAULO62140510159eoRdbTq630449B9';
-</script>
-
-
-
-</div></div></div>
-    </section><section class="editable-style section-element silex-id-1644759082853-8 page-principal paged-element paged-element-visible"><div class="editable-style container-element silex-id-1644759082854-9 silex-element-content website-width prevent-draggable"></div></section><section class="editable-style section-element silex-id-1644758467668-2 page-principal paged-element paged-element-visible"><div class="editable-style container-element silex-id-1644758467669-3 silex-element-content website-width prevent-draggable"><div class="editable-style text-element silex-id-1644758479881-4"><div class="silex-element-content normal"><p></p><h2>&nbsp; &nbsp;A maneira mais pratica de acompanhar o preços de ações</h2><p>Um jeito realmente fácil de acompanhar as suas ações. Alerta-acoes é um serviço de alerta de preços de ações por meio de envio de Telegram ou e-mail.<br><br>Aqui você informa o código da ação,&nbsp; os preços máximo e mínimo.&nbsp;<br>Quando a ação atingir um valor igual ou superior ao preço máximo pré-definido ou igual ou inferior ao preço mínimo pré-definido o alerta é enviado.&nbsp;</p><p>É muito mais comodidade para você tomar suas decisões de investimento!</p><p></p></div></div></div></section><section class="editable-style section-element silex-id-1644758982317-5 page-principal paged-element paged-element-visible"><div class="editable-style container-element silex-id-1644758982317-6 silex-element-content website-width prevent-draggable"></div></section><section class="editable-style section-element silex-id-1644758396698-0 page-principal paged-element paged-element-visible"><div class="editable-style container-element silex-id-1644758396699-1 silex-element-content website-width prevent-draggable"><div class="editable-style text-element silex-id-1644630322582-18 page-principal paged-element paged-element-visible"><div class="silex-element-content normal"><h2>&nbsp; &nbsp; &nbsp;Regras Gerais</h2></div></div><div class="editable-style html-element silex-id-1644630371434-20 page-principal paged-element paged-element-visible"><div class="silex-element-content"><!-- #######  YAY, I AM THE SOURCE EDITOR! #########-->
-<p style="text-align: center;"><strong>As regras são simples e sem burocracia</strong></p>
-<ul>
-<li>Cada email pode cadastrar até 10 alertas de Acões, Frações, FII's e etc.</li>
-<li>Ao cadastrar o primeiro alerta, será enviado um email de confirmação de cadastro.</li>
-<li>Os Alertas são enviados em media com 30 min. de atraso.</li>
-<li>Emails sem alertas cadastrados são removidos automaticamente.</li>
-<li>Todos emails enviados possuem link de cancelamento do cadastro.</li>
-<li>Nenhuma conta de email será utilizada para outros fins, alem deste descrito.</li>
-</ul></div></div></div></section><section class="container-element editable-style silex-id-1478366450713-3 section-element prevent-resizable">
+        <div class="editable-style silex-element-content silex-id-1474394621032-2 container-element website-width selected"><div class="editable-style text-element silex-id-1641068828003-31 page-em-manutencao paged-element paged-element-visible"><div class="silex-element-content normal"><h1><br></h1><h1>Loja em Construção. <br>Volte em breve.</h1><p><br></p></div></div></div>
+    </section><section class="container-element editable-style silex-id-1478366450713-3 section-element prevent-resizable">
         <div class="editable-style silex-element-content silex-id-1478366450713-2 container-element website-width">
 
             
-        <div class="editable-style text-element silex-id-1641066787700-1"><div class="silex-element-content normal"><p><a href="https://t.me/alerta_acoes_bot" target="_blank" title="Utilize o BOT no Telegram.">Utilize o </a><a href="https://t.me/alerta_acoes_bot" target="_blank" title="Utilize o BOT no Telegram.">BOT</a><a href="https://t.me/alerta_acoes_bot" target="_blank" title="Utilize o BOT no Telegram."> no Telegram.</a></p></div></div></div>
-    </section><section class="editable-style section-element silex-id-1644630722513-0 page-principal paged-element paged-element-visible"><div class="editable-style container-element silex-id-1644630722513-1 page-principal paged-element silex-element-content website-width prevent-draggable paged-element-visible"><div class="editable-style html-element silex-id-1707856039837-5"><div class="silex-element-content">
+        <div class="editable-style html-element silex-id-1708776061222-2 page-em-manutencao paged-element paged-element-visible"><div class="silex-element-content">
 <!-- #######  YAY, I AM THE SOURCE EDITOR! #########-->
-<p style="text-align: center;">© 2020 - <script>document.write(new Date().getFullYear())</script> alerta_acoes.boti.com.br. Todos os direitos reservados. Segurança e privacidade.
+<p style="text-align: center;">© 2020 - <script>document.write(new Date().getFullYear())</script> dogsandcats.boti.com.br. Todos os direitos reservados. Segurança e privacidade.
 </p>
-</div></div></div></section></body></html>
+</div></div></div>
+    </section></body></html>
